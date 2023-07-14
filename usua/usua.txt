@@ -1,0 +1,58 @@
+docker stop UbuntuForAutoGpt01
+docker run -it --name UbuntuForAutoGpt01 -v /e/docker/UbuntuForAutoGpt01/home:/home ubuntu
+docker exec -it UbuntuForAutoGpt01 /bin/bash
+docker start UbuntuForAutoGpt01
+
+ubuntu docker安装git
+apt-get update
+apt-get install python3
+apt-get install python3-pip
+apt-get install git
+apt-get install iputils-ping
+apt-get install vim
+apt-get install libnet-ifconfig-wrapper-perl
+apt-get install curl -y
+
+git clone -b stable https://github.com/Significant-Gravitas/Auto-GPT.git
+
+python3 -m autogpt --gpt3only
+
+
+
+mkdir -p /etc/systemd/system/docker.service.d
+touch /etc/systemd/system/docker.service.d/http-proxy.conf
+
+export http_proxy=http://172.30.192.1:10809
+export https_proxy=http://172.30.192.1:10809
+
+
+									   
+export http_proxy=http://127.0.0.1:10809
+export https_proxy=http://127.0.0.1:10809
+
+
+
+35.201.250.23  liu,liu+
+/home/aceliuchanghong/lch/ftpmy/liu
+docker run -d -v /home/aceliuchanghong/lch/ftpmy:/home/vsftpd -p 20:20 -p 21:21 -p 21100-21110:21100-21110 -e FTP_USER=liu -e FTP_PASS=liu+ --name myftp fauria/vsftpd
+
+FROM openjdk:17-oracle
+MAINTAINER lch <aceliuchanghong@gamil.com>
+ADD app.jar app.jar
+CMD java -jar app.jar
+sudo docker build -f /home/aceliuchanghong/lch/my3000/myfirstdockerfile -t liu/test3000:1.0 .
+sudo docker run -itd -p 3000:8080 --name liu3000 liu/test3000:1.0
+sudo docker inspect c39825cff2d6 --format='{{.Config.Cmd}}'
+docker ps -a --no-trunc | grep liu3000 
+
+
+FROM openjdk:17-oracle
+MAINTAINER lch <aceliuchanghong@gamil.com>
+ADD myVoice-0.0.1-SNAPSHOT.jar app.jar
+CMD java -jar app.jar
+
+sudo docker build -f /home/aceliuchanghong/lch/hongsu/dockerfile_hong -t liu/hongsu:1.0 .
+
+sudo docker run -itd -p 801:8080 --name liuhongsu liu/hongsu:1.0
+
+
