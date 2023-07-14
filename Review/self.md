@@ -33,9 +33,12 @@
 (之后再写,写不出来)
 ```
 # 大数据
+### Hadoop(搭建:docker-->CDH)
+#### Java,Python,Scala
+* MapReduce==>Hdfs==>Yarn
 
-
-
+[框架]:../img/Hadoop.png
+![框架]
 
 
 
